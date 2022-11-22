@@ -1,0 +1,75 @@
+	import java.util.*;
+	class AddMatrix{
+		public static void main(String args[]){
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the size of  1st array");
+	int c=sc.nextInt();
+	int r=sc.nextInt();
+	int arr[][]=new int[r][c];
+	for(int i=0;i<arr.length;i++)
+	{
+		for(int j=0;j<arr.length;j++)
+		{
+		System.out.println("Enter the value for arr["+i+"]"+"["+j+"]");
+		arr[i][j]=sc.nextInt();
+		}
+	}
+
+	System.out.println("Enter the size of  2nd array");
+	int c1=sc.nextInt();
+	int r1=sc.nextInt();
+	int arr1[][]=new int[r1][c1];
+
+	for(int i=0;i<arr1.length;i++)
+	{
+		for(int j=0;j<arr1.length;j++)
+		{
+		System.out.println("Enter the value for arr1["+i+"]"+"["+j+"]");
+		arr1[i][j]=sc.nextInt();
+		}
+	}
+	int sum[][]=new int[arr.length][arr.length];	
+			
+		for(int i=0;i<arr.length;i++){
+		for(int j=0;j<arr.length;j++){
+		 sum[i][j]=arr[i][j]+arr1[i][j];
+		
+		}
+		
+	}
+	
+	
+	System.out.println("Entered 1st Array is:");
+
+	for(int i=0;i<arr.length;i++)
+	{
+		for(int j=0;j<arr.length;j++)
+		{
+		System.out.print(" "+arr[i][j]);
+		}
+		System.out.println();
+	}
+	
+	System.out.println("Entered 2nd Array is:");
+
+	for(int i=0;i<arr1.length;i++)
+	{
+		for(int j=0;j<arr1.length;j++)
+		{
+		System.out.print(" "+arr1[i][j]);
+		}
+		System.out.println();
+	}
+	
+	System.out.println("Addition of Matrix");
+	for(int i=0;i<sum.length;i++)
+	{
+		for(int j=0;j<sum.length;j++)
+		{
+		System.out.print(" "+sum[i][j]);
+		}
+		System.out.println();
+	}
+		
+	}	
+	}
