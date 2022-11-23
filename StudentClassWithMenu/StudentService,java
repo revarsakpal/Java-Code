@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+public class StudentService {
+
+	
+	public static void addStudentInfo(Student[] student,int loc) {
+		if(loc > student.length) 
+			System.out.println("Record Limit Finished");
+		else {
+			Scanner sc=new Scanner(System.in); 
+			System.out.println("Enter ID");
+			int id=sc.nextInt();
+			sc.nextLine();
+			System.out.println("Enter name");
+			String name=sc.nextLine();
+			System.out.println("Enter Marks for 3 subjects");
+			int marks[]=new int[3];
+			marks[0]=sc.nextInt();
+			marks[1]=sc.nextInt();
+			marks[2]=sc.nextInt();
+			//System.out.println("Loc"+loc);
+			student[loc]=new Student(id,name,marks);
+			//System.out.println(student[loc]);
+			System.out.println("Stduent no "+ ++loc + " Added Successfully!!");
+
+		}
+
+	}
+	//Showing all student info
+	public static void showAllStudents(Student[] student,int count) {
+		for(int i=0;i<count;i++) {
+			//System.out.println("count"+count);
+			System.out.println(student[i]);
+		}
+
+	}
+	//Addition of marks
+	public static int addMarks(int []marks) {
+		int total=marks[0]+marks[1]+marks[2];
+		return total;
+	}
+	
+	//Calculating percentange
+	public static float calPercentage(Student[] student,int count) {
+		Student find=findStudent(student,count);
+		float per=0;
+		int total=addMarks(find.getMarks());
+				per=(total*100)/300;
+		return per;
+	}
+	//calculate GPA
+	public static char calculateGPA(float per) {
+		char GPA;
+		if(per>80) 
+			{GPA='A';}
+		else if(per<80 && per >70)
+			{GPA='B';}
+			else if(per <70 && per>60)
+				{GPA='C';}
+			else
+				{GPA='D';}
+		return GPA;
+	
+	}
+	public static Student findStudent(Student[] student,int count) {
+        Scanner sc=new Scanner(System.in);   
+		System.out.println("Enter id for search");
+		Student find=null;
+           int id=sc.nextInt();
+           for(int i=0;i<count;i++){
+        	   if(student[i].getId()==id) {
+        		   find=student[i];
+        	   }
+        	          		   
+           }
+           return find;
+		
+	}
+
+}
