@@ -53,6 +53,22 @@ public class QuestionServices {
 		
 	}}
 
+	/*//display question & getting input of answers//randon question selection take array of 10 question
+	public static void displayTest(int choice) {
+			System.out.println("\nExam Topic::"+exam[choice-1].getEtopic()+"\t"+"Exam Date:"+exam[choice-1].getExamdate());
+			int []r1=new int[5];
+			//int i=0;
+			for(int j=0;j<ans.length;j++) {
+				int rand=(int)(Math.random()*10)+0;
+						System.out.println(exam[choice-1].getQues()[rand]);
+						getAnswer(j);
+					}
+				
+				//System.out.println("Rand"+(rand-1));
+			showResult(choice);
+	}
+	*/
+	
 	//getting input of answers from user
 	private static void getAnswer(int j) {
 		Scanner sc=new Scanner(System.in);
