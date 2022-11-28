@@ -1,20 +1,20 @@
 package com.demo.beans;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class Exam {
 	private int eid;
-    private  String ename;
-    private String etopic;
-    private Questions [] ques;
-    private Date examdate;
-    private static int count;
-    static {
-    	count=0;
-    }
-    
-    
-    
+	private  String ename;
+	private String etopic;
+	private Questions [] ques;
+	private Date examdate;
+	private static int count;
+	static {
+		count=0;
+		//System.out.println("SELECT ::\t 1:JAVA\t\t 2:HTML\t\t3:EXIT");
+	}
+	
 	public Exam() {
 		this.eid = count;
 		this.ename =null;
@@ -22,7 +22,7 @@ public class Exam {
 		this.ques = null;
 		this.examdate = null;
 	}
-	
+
 	public Exam(int eid, String ename, String etopic, Questions[] ques, Date examdate) {
 		this.eid = eid;
 		this.ename = ename;
@@ -54,6 +54,13 @@ public class Exam {
 	public void setExamdate(Date examdate) {
 		this.examdate = examdate;
 	}
-	
-    
+
+	@Override
+	public String toString() {
+		return "Exam [eid=" + eid + ", ename=" + ename + ", etopic=" + etopic + ", ques=" + Arrays.toString(ques)
+				+ ", examdate=" + examdate + "]";
+	}
+
+
 }
+	
